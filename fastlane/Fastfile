@@ -1,0 +1,7 @@
+lane :test do
+  gym(
+    xcpretty_formatter: `xcpretty-json-formatter`
+  )
+
+  build_log_info
+end
