@@ -6,16 +6,13 @@ module Fastlane
   module Actions
     class BuildLogInfoAction < Action
       def self.run(params)
-        #TODO: need simply
         dir_path = File.expand_path('../../../../../', File.dirname(__FILE__))
         path = ENV["XCPRETTY_JSON_FILE_OUTPUT"] ||= "#{dir_path}/build/reports/errors.json"
 
         begin
-          File.open(path) do |json|
-            @json_data = JSON.parse(json)
-          end
+          @json_data = JSON.parse(File.open(path).read)
         rescue => error
-          UI.user_error!(error.message)
+          UI.user_error!("JSON File Error:#{error.message}")
         end
 
         all_keys = %w[warnings ld_warnings compile_warnings errors
@@ -29,43 +26,39 @@ module Fastlane
           value = @json_data[key].size
 
           if value > 0
-            summary_rows << ["#{key}".red, "#{value}".red]
+            summary_rows << [key.to_s.red, value.to_s.red]
           else
-            summary_rows << [key, "#{value}".green]
+            summary_rows << [key, value.to_s.green]
           end
-
-          key_num = "#{key}_num"
-          eval "@#{key_num}=#{value}"
         end
 
         # summary
-        puts ("")
         summary_table = Helper::BuildLogInfoHelper.summary_table(
-            title: "Summary",
-            headings: ["Key", "Num"],
-            rows: summary_rows)
+          title: "Summary",
+          headings: %w[Key Num],
+          rows: summary_rows
+        )
         puts(summary_table)
-
 
         # detail
         all_keys.each do |key|
           rows = []
 
           @json_data[key].each do |line|
-            rows << ["filePath", line["file_path"], line["reason"]]
+            rows << [line["file_path"], line["reason"]]
           end
 
-          title_num = eval "@#{key}_num"
+          title_num = @json_data[key].size
 
           # if num is 0 then do not display
           next if title_num == 0
 
           # detail table
-          puts ("")
           summary_table = Helper::BuildLogInfoHelper.summary_table(
-              title: "#{key} #{title_num}",
-              headings: ["Key", "FilePath", "Reason" ],
-              rows: rows)
+            title: "#{key} #{title_num}",
+            headings: %w[FilePath Reason],
+            rows: rows
+          )
           puts(summary_table)
         end
       end
@@ -86,12 +79,11 @@ module Fastlane
       end
 
       def self.available_options
-        [
-        ]
+        # nothing
       end
 
       def self.is_supported?(platform)
-        [ :ios ].include?(platform)
+        [:ios].include?(platform)
       end
     end
   end
