@@ -19,7 +19,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency('xcpretty-json-formatter')
-  spec.add_dependency('slack-ruby-client')
 
   spec.add_development_dependency('pry')
   spec.add_development_dependency('bundler')
