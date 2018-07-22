@@ -12,15 +12,51 @@ fastlane add_plugin build_log_info
 
 ## About build_log_info
 
-build log info
+show build log information
 
-**Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
 
-## Example
+## Fastlane Example
+You need set xcpretty_formatter that is xcpretty-json-formatter.
 
-Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
 
-**Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
+```
+# [NEED] you need set xcpretty_formatter
+gym(
+  xcpretty_formatter: `xcpretty-json-formatter`
+)
+
+build_log_info   
+```
+
+
+## Example Result
+
+```
++--------------------------+-----+
+|            Summary             |
++--------------------------+-----+
+| Key                      | Num |
++--------------------------+-----+
+| warnings                 | 0   |
+| ld_warnings              | 0   |
+| compile_warnings         | 1   |
+| errors                   | 0   |
+| compile_errors           | 0   |
+| file_missing_errors      | 0   |
+| undefined_symbols_errors | 0   |
+| duplicate_symbols_errors | 0   |
+| tests_failures           | 0   |
+| tests_summary_messages   | 0   |
++--------------------------+-----+
+
++--------------------------------------+--------------------------+
+|                       compile_warnings 1                        |
++--------------------------------------+--------------------------+
+| FilePath                             | Reason                   |
++--------------------------------------+--------------------------+
+| /YourPath/ViewController.swift:15:20 | string literal is unused |
++--------------------------------------+--------------------------+
+```
 
 ## Run tests for this plugin
 
