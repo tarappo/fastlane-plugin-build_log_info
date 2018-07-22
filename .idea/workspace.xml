@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a6ea140d-18a2-49c8-abda-305bf2282ed3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fastlane-plugin-build_log_info.gemspec" beforeDir="false" afterPath="$PROJECT_DIR$/fastlane-plugin-build_log_info.gemspec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fastlane/Fastfile" beforeDir="false" afterPath="$PROJECT_DIR$/fastlane/Fastfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/fastlane/plugin/build_log_info/actions/build_log_info_action.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/fastlane/plugin/build_log_info/actions/build_log_info_action.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +17,8 @@
       <file leaf-file-name="build_log_info_action.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/build_log_info/actions/build_log_info_action.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-531">
-              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+            <state relative-caret-position="639">
+              <caret line="87" column="30" selection-start-line="87" selection-start-column="30" selection-end-line="87" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -52,8 +49,8 @@
       <file leaf-file-name="Fastfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fastlane/Fastfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="135">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -74,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/fastlane-plugin-build_log_info.gemspec">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -228,12 +225,12 @@
       <workItem from="1532148742025" duration="3791000" />
       <workItem from="1532173698951" duration="58000" />
       <workItem from="1532225852417" duration="5970000" />
-      <workItem from="1532234205257" duration="1824000" />
+      <workItem from="1532234205257" duration="2291000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11643000" />
+    <option name="totallyTimeSpent" value="12110000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="494" y="85" width="1400" height="1000" extended-state="0" />
@@ -392,21 +389,21 @@
     <entry file="file://$PROJECT_DIR$/fastlane-plugin-build_log_info.gemspec">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fastlane/Fastfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/build_log_info/actions/build_log_info_action.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-531">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        <state relative-caret-position="639">
+          <caret line="87" column="30" selection-start-line="87" selection-start-column="30" selection-end-line="87" selection-end-column="30" />
         </state>
       </provider>
     </entry>
