@@ -52,5 +52,8 @@ build-iPhoneSimulator/
 # debug
 sample/*
 sample.xcodeproj
+fastlane/README.md
+fastlane/report.xml
+
 
 
