@@ -6,7 +6,7 @@ module Fastlane
   module Actions
     class BuildLogInfoAction < Action
       def self.run(params)
-        dir_path = File.expand_path('../../../../../', File.dirname(__FILE__))
+        dir_path = File.join(File.expand_path("../../../../../../", __FILE__))
         path = ENV["XCPRETTY_JSON_FILE_OUTPUT"] ||= "#{dir_path}/build/reports/errors.json"
 
         begin
