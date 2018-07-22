@@ -78,14 +78,14 @@ module Fastlane
 
       def self.available_options
         [
-        FastlaneCore::ConfigItem.new(key: :file_path,
-                                     env_name: 'file_path',
-                                     description: 'Path to result json file. ',
-                                     default_value: Dir['./build/reports/*.json'].last,
-                                     optional: true,
-                                     verify_block: proc do |value|
-                                       raise "Couldn't find file".red unless File.exist?(value)
-                                     end)
+          FastlaneCore::ConfigItem.new(key: :file_path,
+                                       env_name: 'file_path',
+                                       description: 'Path to result json file. ',
+                                       default_value: Dir['./build/reports/*.json'].last,
+                                       optional: true,
+                                       verify_block: proc do |value|
+                                         raise "Couldn't find file".red unless File.exist?(value)
+                                       end)
         ]
       end
 
