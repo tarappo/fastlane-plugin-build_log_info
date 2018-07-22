@@ -6,10 +6,8 @@ module Fastlane
   module Actions
     class BuildLogInfoAction < Action
       def self.run(params)
-        dir_path = File.join(File.expand_path("../../../../../../", __FILE__))
-        path = ENV["XCPRETTY_JSON_FILE_OUTPUT"] ||= "#{dir_path}/build/reports/errors.json"
-
         begin
+          path = params[:file_path]
           @json_data = JSON.parse(File.open(path).read)
         rescue => error
           UI.user_error!("JSON File Error:#{error.message}")
@@ -79,7 +77,16 @@ module Fastlane
       end
 
       def self.available_options
-        # nothing
+        [
+        FastlaneCore::ConfigItem.new(key: :file_path,
+                                     env_name: 'file_path',
+                                     description: 'Path to result json file. ',
+                                     default_value: Dir['./build/reports/*.json'].last,
+                                     optional: true,
+                                     verify_block: proc do |value|
+                                       raise "Couldn't find file".red unless File.exist?(value)
+                                     end)
+        ]
       end
 
       def self.is_supported?(platform)
