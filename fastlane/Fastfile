@@ -1,5 +1,4 @@
 lane :test do
-  # you need set xcworkspace
   gym(
     export_method: "development",
     skip_package_ipa: true,
