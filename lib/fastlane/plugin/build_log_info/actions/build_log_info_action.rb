@@ -51,6 +51,9 @@ module Fastlane
           # if num is 0 then do not display
           next if title_num == 0
 
+          # if skip table then do not display
+          next if params[:skip_summary_types].include?(key)
+
           # detail table
           summary_table = Helper::BuildLogInfoHelper.summary_table(
             title: "#{key} #{title_num}",
@@ -79,13 +82,19 @@ module Fastlane
       def self.available_options
         [
           FastlaneCore::ConfigItem.new(key: :file_path,
-                                       env_name: 'file_path',
+                                       env_name: 'FILE_PATH',
                                        description: 'Path to result json file. ',
                                        default_value: Dir['./build/reports/*.json'].last,
                                        optional: true,
                                        verify_block: proc do |value|
                                          raise "Couldn't find file".red unless File.exist?(value)
-                                       end)
+                                       end),
+          FastlaneCore::ConfigItem.new(key: :skip_summary_types,
+                                       env_name: 'SKIP_SUMMARY_TYPES',
+                                       description: 'skip show summary table. ',
+                                       default_value: [],
+                                       is_string: false,
+                                       optional: true)
         ]
       end
 
